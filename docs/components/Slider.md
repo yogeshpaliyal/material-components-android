@@ -168,7 +168,7 @@ rangeSlider.setLabelFormatter { value: Float ->
 }
 ```
 
-## Types
+### Types
 
 There are two types of sliders: 1\. [Continuous slider](#continuous-slider), 2\.
 [Discrete slider](#discrete-slider)
@@ -177,7 +177,7 @@ There are two types of sliders: 1\. [Continuous slider](#continuous-slider), 2\.
 
 A slider with two thumbs is called a range slider.
 
-### Continuous slider
+## Continuous slider
 
 Continuous sliders allow users to make meaningful selections that don’t require
 a specific value.
@@ -205,7 +205,7 @@ In the layout:
     android:valueTo="100.0" />
 ```
 
-#### Continuous range slider
+### Continuous range slider
 
 API and source code:
 
@@ -230,7 +230,7 @@ In the layout:
   android:valueTo="100.0" />
 ```
 
-### Discrete slider
+## Discrete slider
 
 Discrete sliders display a numeric value label upon pressing the thumb, which
 allows a user to input an exact value.
@@ -253,7 +253,7 @@ In the layout:
     android:stepSize="5.0" />
 ```
 
-#### Discrete range slider
+### Discrete range slider
 
 API and source code:
 
@@ -287,7 +287,7 @@ slider also has tick marks.
 
 #### Track attributes
 
-&nbsp;                                      | Attribute                | Related method(s)                                         | Default value
+Element                                     | Attribute                | Related method(s)                                         | Default value
 ------------------------------------------- | ------------------------ | --------------------------------------------------------- | -------------
 **Min value**                               | `android:valueFrom`      | `setValueFrom`<br/>`getValueFrom`                         | N/A
 **Max value**                               | `android:valueTo`        | `setValueTo`<br/>`getValueTo`                             | N/A
@@ -306,7 +306,7 @@ thing._
 
 #### Thumb attributes
 
-&nbsp;           | Attribute              | Related method(s)                                                                 | Default value
+Element          | Attribute              | Related method(s)                                                                 | Default value
 ---------------- | ---------------------- | --------------------------------------------------------------------------------- | -------------
 **Color**        | `app:thumbColor`       | `setThumbTintList`<br/>`getThumbTintList`                                         | `?attr/colorPrimary`
 **Radius**       | `app:thumbRadius`      | `setThumbRadiusResource`<br/>`setThumbRadius`<br/>`getThumbRadius`                | `10dp`
@@ -318,7 +318,7 @@ thing._
 
 #### Value label attributes
 
-&nbsp;        | Attribute           | Related method(s)                           | Default value
+Element       | Attribute           | Related method(s)                           | Default value
 ------------- | ------------------- | ------------------------------------------- | -------------
 **Style**     | `app:labelStyle`    | N/A                                         | `@style/Widget.MaterialComponents.Tooltip`
 **Formatter** | N/A                 | `setLabelFormatter`<br/>`hasLabelFormatter` | `null`
@@ -329,7 +329,7 @@ _**Note:** The value label is a
 
 #### Tick mark attributes
 
-&nbsp;                              | Attribute               | Related method(s)                                       | Default value
+Element                             | Attribute               | Related method(s)                                       | Default value
 ----------------------------------- | ----------------------- | ------------------------------------------------------- | -------------
 **Color**                           | `app:tickColor`         | `setTickTintList`<br/>`getTickTintList`                 | `null`
 **Color for track's active part**   | `app:tickColorActive`   | `setTickActiveTintList`<br/>`getTickActiveTintList`     | `?attr/colorOnPrimary` at 54%
@@ -342,7 +342,7 @@ thing._
 
 #### Styles
 
-&nbsp;            | Style
+Element           | Style
 ----------------- | ----------------------------------
 **Default style** | `Widget.MaterialComponents.Slider`
 

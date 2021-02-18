@@ -80,7 +80,7 @@ menu. While optional, their use is strongly encouraged. For more information
 about this component's accessibility, check out
 [the text field's a11y section](TextField.md#making-text-fields-accessible).
 
-## Types
+### Types
 
 Menus allow users to make a selection from multiple options. They are less
 prominent and take up less space than selection controls, such as a set of radio
@@ -116,7 +116,8 @@ API and source code:
 
 The following example shows an overflow menu.
 
-![White menu container on top of purple menu bar](assets/menu/menus_overflow.png)
+![Composite image: purple "Menus" bar, and purple "Menus" bar with white menu
+and 3 options](assets/menu/menus_overflow.png)
 
 In code:
 
@@ -415,7 +416,7 @@ The following are menu anatomy diagrams showing all possible elements:
 
 #### Container attributes
 
-&nbsp;         | Attribute                     | Related method(s) | Default value
+Element        | Attribute                     | Related method(s) | Default value
 -------------- | ----------------------------- | ----------------- | -------------
 **Background** | `android:popupMenuBackground` | N/A               | `?attr/popupMenuBackground`
 **Color**      | N/A                           | N/A               | `?attr/colorSurface`
@@ -423,14 +424,14 @@ The following are menu anatomy diagrams showing all possible elements:
 
 #### Text attributes
 
-&nbsp;         | Attribute                                                                     | Related method(s)                                                  | Default value
+Element        | Attribute                                                                     | Related method(s)                                                  | Default value
 -------------- | ----------------------------------------------------------------------------- | ------------------------------------------------------------------ | -------------
 **Text label** | `android:title`                                                               | `getMenu().add`<br/>`getMenu().addSubMenu`<br/>`getMenu().getItem` | N/A
 **Typography** | `?attr/textAppearanceLargePopupMenu`<br/>`?attr/textAppearanceSmallPopupMenu` | N/A                                                                | `?attr/textAppearanceSubtitle1`
 
 #### Styles
 
-&nbsp;                      | **Theme attribute**              | **Default value**
+Element                     | **Theme attribute**              | **Default value**
 --------------------------- | -------------------------------- | -----------------
 **Popup menus**             | `?attr/popupMenuStyle`           | `@style/Widget.MaterialComponents.PopupMenu`
 **List popup window style** | `?attr/listPopupWindowStyle`     | `@style/Widget.MaterialComponents.PopupMenu.ListPopupWindow`
@@ -452,7 +453,7 @@ _**Note:** The exposed dropdown menu is implemented through the
 [Material text fields](https://material.io/design/components/text-fields.html)
 and their usage, see the [TextInputLayout documentation](TextField.md)._
 
-#### Exposed dropdown menu example
+### Exposed dropdown menu example
 
 API and source code:
 
@@ -522,13 +523,13 @@ To have an outlined variation of the exposed dropdown menu, set the `style` to
 
 ![Menu with purple outlined text field element and 4 options. Option 1 selected.](assets/menu/menus_exposed_dropdown_outlined.png)
 
-##### Non editable variation
+#### Non editable variation
 
 Disable the user input in the `AutoCompleteTextView` to have a non editable
 variation of the menu by setting `android:inputType="none"` on the
 `AutoCompleteTextView`.
 
-##### Setting a default value
+#### Setting a default value
 
 In order to have a pre-selected value displayed, you can call
 `setText(CharSequence text, boolean filter)` on the `AutoCompleteTextView` with
@@ -554,7 +555,7 @@ To see all attributes that apply to the `TextInputLayout`, see the
 
 #### `AutoCompleteTextView` attributes (input text, dropdown menu)
 
-&nbsp;                                | Attribute                                                           | Related method(s)                                            | Default value
+Element                               | Attribute                                                           | Related method(s)                                            | Default value
 ------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------ | -------------
 **Input text**                        | `android:text`                                                      | `setText`<br/>`getText`                                      | `@null`
 **Typography**                        | `android:textAppearance`                                            | `setTextAppearance`                                          | `?attr/textAppearanceSubtitle1`
@@ -566,7 +567,7 @@ To see all attributes that apply to the `TextInputLayout`, see the
 
 #### Styles
 
-&nbsp;             | Style
+Element            | Style
 ------------------ | -----
 **Filled style**   | `Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu`
 **Outlined style** | `Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu`
@@ -581,6 +582,10 @@ and
 [attrs](https://github.com/material-components/material-components-android/tree/master/lib/java/com/google/android/material/textfield/res/values/attrs.xml).
 
 ## Theming menus
+
+Menus drawers support
+[Material Theming](https://material.io/components/text-fields/#theming) and can
+be customized in terms of color, typography and shape.
 
 ### Menu theming examples
 
@@ -605,7 +610,7 @@ The following example shows a menu with Material Theming.
 
 ![White menu container with brown text showing 3 options](assets/menu/menus_theming.png)
 
-#### Implementing menu theming
+### Implementing menu theming
 
 Using default style theme attributes (affects all menus but does not affect
 other components):
@@ -678,11 +683,11 @@ API and source code:
 The following example shows filled and outlined exposed dropdown menu types with
 Material Theming.
 
-![Two examples of a 3-option white menu container below a "Show menu" button:
-button 1 is grey,, button 2 has a pink
+![Composite image of "Show menu" button and options: gray button with pink
+underline, and white button with pink
 outline](assets/menu/menus_exposed_dropdown_theming.png)
 
-#### Implementing exposed dropdown menu theming
+### Implementing exposed dropdown menu theming
 
 Using default style theme attributes, styles and theme overlays (themes all
 menus but does not affect other components):

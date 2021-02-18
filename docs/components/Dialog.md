@@ -43,7 +43,7 @@ such as an icon on a title having a content description via the
 `android:contentDescription` attribute set in the
 `MaterialAlertDialog.MaterialComponents.Title.Icon` style or descendant.
 
-## Types
+### Types
 
 There are four types of dialogs: 1\. [Alert dialog](#alert-dialog), 2\.
 [Simple dialog](#simple-dialog), 3\.
@@ -69,7 +69,7 @@ API and source code:
     *   [Class description](https://developer.android.com/reference/com/google/android/material/dialog/MaterialAlertDialogBuilder)
     *   [Class source](https://github.com/material-components/material-components-android/tree/master/lib/java/com/google/android/material/dialog/MaterialAlertDialogBuilder.java)
 
-#### Alert dialog
+## Alert dialog
 
 Alert dialogs interrupt users with urgent information, details, or actions.
 
@@ -95,7 +95,7 @@ MaterialAlertDialogBuilder(context)
         .show()
 ```
 
-#### Simple dialog
+## Simple dialog
 
 Simple dialogs can display items that are immediately actionable when selected.
 They don’t have text buttons.
@@ -121,7 +121,7 @@ MaterialAlertDialogBuilder(context)
         .show()
 ```
 
-#### Confirmation dialog
+## Confirmation dialog
 
 Confirmation dialogs give users the ability to provide final confirmation of a
 choice before committing to it, so they have a chance to change their minds if
@@ -170,7 +170,7 @@ MaterialAlertDialogBuilder(context)
         .show()
 ```
 
-#### Full-screen dialog
+## Full-screen dialog
 
 Full-screen dialogs group a series of tasks, such as creating a calendar entry
 with the event title, date, location, and time. Because they take up the entire
@@ -198,7 +198,7 @@ particular type), a background scrim, and, optionally, title and buttons.
 
 #### Container attributes
 
-&nbsp;                              | **Attribute**                                            | **Related methods**                                    | **Default value**
+Element                             | **Attribute**                                            | **Related methods**                                    | **Default value**
 ----------------------------------- | -------------------------------------------------------- | ------------------------------------------------------ | -----------------
 **Color**                           | N/A                                                      | N/A                                                    | `?attr/colorSurface`
 **Shape**                           | `app:shapeAppearance`<br/>`app:shapeAppearanceOverlay`   | N/A                                                    | `?attr/shapeAppearanceMediumComponent`
@@ -207,7 +207,7 @@ particular type), a background scrim, and, optionally, title and buttons.
 
 #### Title attributes
 
-&nbsp;         | **Attribute**            | **Related methods**              | **Default value**
+Element        | **Attribute**            | **Related methods**              | **Default value**
 -------------- | ------------------------ | -------------------------------- | -----------------
 **Text label** | N/A                      | `setTitle`<br/>`setCustomTitle`  | `null`
 **Text color** | `android:textColor`      | N/A                              | `?attr/colorOnSurface` at 87%
@@ -218,7 +218,7 @@ particular type), a background scrim, and, optionally, title and buttons.
 
 **Supporting text**
 
-&nbsp;         | **Attribute**            | **Related methods** | **Default value**
+Element        | **Attribute**            | **Related methods** | **Default value**
 -------------- | ------------------------ | ------------------- | -----------------
 **Text**       | N/A                      | `setMessage`        | `null`
 **Color**      | `android:textColor`      | N/A                 | `?attr/colorOnSurface` at 60%
@@ -226,7 +226,7 @@ particular type), a background scrim, and, optionally, title and buttons.
 
 **List item**
 
-&nbsp;                                  | **Attribute**                  | **Related methods**    | **Default value**
+Element                                 | **Attribute**                  | **Related methods**    | **Default value**
 --------------------------------------- | ------------------------------ | ---------------------- | -----------------
 **List item layout**                    | `app:listItemLayout`           | `setItems`             | [`@layout/mtrl_alert_select_dialog_item`](https://github.com/material-components/material-components-android/tree/master/lib/java/com/google/android/material/dialog/res/layout/mtrl_alert_select_dialog_item.xml)
 **List item layout style**              | N/A                            | N/A                    | `?attr/materialAlertDialogBodyTextStyle`
@@ -243,7 +243,7 @@ _**Note:** You can set any view to be the content of your dialog via the
 
 #### Buttons attributes
 
-&nbsp;                                  | **Attribute**               | **Related methods** | **Default value**
+Element                                 | **Attribute**               | **Related methods** | **Default value**
 --------------------------------------- | --------------------------- | ------------------- | -----------------
 **Buttons theme attributes**            | `app:buttonBar*ButtonStyle` | N/A                 | `@style/Widget.MaterialComponents.Button.TextButton.Dialog`
 **Buttons (neutral/negative/positive)** | N/A                         | `set*Button`        | `null`
@@ -254,13 +254,13 @@ For specific button attributes, see the
 
 #### Scrim attributes
 
-&nbsp;          | **Attribute**                 | **Related methods** | **Default value**
+Element         | **Attribute**                 | **Related methods** | **Default value**
 --------------- | ----------------------------- | ------------------- | -----------------
 **Dim ammount** | `android:backgroundDimAmount` | N/A                 | 32%
 
 #### Theme overlays
 
-&nbsp;                     | **Theme overlay**
+Element                    | **Theme overlay**
 -------------------------- | -----------------
 **Default theme overlay**  | `ThemeOverlay.MaterialComponents.MaterialAlertDialog`
 **Centered theme overlay** | `ThemeOverlay.MaterialComponents.MaterialAlertDialog.Centered`
@@ -269,7 +269,7 @@ Default theme overlay attribute: `?attr/materialAlertDialogTheme`
 
 #### Theme attributes
 
-&nbsp;                    | **Theme attribute**                       | **Default value**
+Element                   | **Theme attribute**                       | **Default value**
 ------------------------- | ----------------------------------------- | -----------------
 **Default style**         | `?attr/alertDialogStyle`                  | `@style/MaterialAlertDialog.MaterialComponents`
 **Title text style**      | `?attr/materialAlertDialogTitleTextStyle` | `@style/MaterialAlertDialog.MaterialComponents.Title.Text`

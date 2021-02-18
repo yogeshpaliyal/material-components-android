@@ -12,7 +12,8 @@ path: /catalog/buttons/
 [Buttons](https://material.io/components/buttons/) allow users to take actions,
 and make choices, with a single tap.
 
-!["Button on a screen"](assets/buttons/buttons_hero.png)
+!["Photo of tan stone archways above a modal bottom sheet titled "Walk below the
+arches" with filled "Learn more" button"](assets/buttons/buttons_hero.png)
 
 **Contents**
 
@@ -45,7 +46,7 @@ unnecessary.
 For more information on content labels, go to the
 [Android accessibility help guide](https://support.google.com/accessibility/android/answer/7158690).
 
-## Types
+### Types
 
 There are four types of buttons: 1\. [Text button](#text-button), 2\.
 [Outlined button](#outlined-button), 3\. [Contained button](#contained-button),
@@ -119,7 +120,7 @@ A text button has a text label, a transparent container and an optional icon.
 
 #### Text label attributes
 
-&nbsp;         | Attribute                | Related method(s)                 | Default value
+Element        | Attribute                | Related method(s)                 | Default value
 -------------- | ------------------------ | --------------------------------- | -------------
 **Text label** | `android:text`           | `setText`<br/>`getText`           | `null`
 **Color**      | `android:textColor`      | `setTextColor`<br/>`getTextColor` | `?attr/colorPrimary` (see all [states](https://github.com/material-components/material-components-android/tree/master/lib/java/com/google/android/material/button/res/color/mtrl_text_btn_text_color_selector.xml))
@@ -127,7 +128,7 @@ A text button has a text label, a transparent container and an optional icon.
 
 #### Container attributes
 
-&nbsp;           | Attribute             | Related method(s)                                                            | Default value
+Element          | Attribute             | Related method(s)                                                            | Default value
 ---------------- | --------------------- | ---------------------------------------------------------------------------- | -------------
 **Color**        | `app:backgroundTint`  | `setBackgroundColor`<br/>`setBackgroundTintList`<br/>`getBackgroundTintList` | `@android:color/transparent` (see all [states](https://github.com/material-components/material-components-android/tree/master/lib/java/com/google/android/material/button/res/color/mtrl_btn_text_btn_bg_color_selector.xml))
 **Stroke color** | `app:strokeColor`     | `setStrokeColor`<br/>`setStrokeColorResource`<br/>`getStrokeColor`           | `null`
@@ -138,7 +139,7 @@ A text button has a text label, a transparent container and an optional icon.
 
 #### Icon attributes
 
-&nbsp;                                          | Attribute         | Related method(s)                                         | Default value
+Element                                         | Attribute         | Related method(s)                                         | Default value
 ----------------------------------------------- | ----------------- | --------------------------------------------------------- | -------------
 **Icon**                                        | `app:icon`        | `setIcon`<br/>`setIconResource`<br/>`getIcon`             | `null`
 **Color**                                       | `app:iconTint`    | `setIconTint`<br/>`setIconTintResource`<br/>`getIconTint` | `?attr/colorPrimary` (see all [states](https://github.com/material-components/material-components-android/tree/master/lib/java/com/google/android/material/button/res/color/mtrl_text_btn_text_color_selector.xml))
@@ -148,7 +149,7 @@ A text button has a text label, a transparent container and an optional icon.
 
 #### Styles
 
-&nbsp;            | Style
+Element           | Style
 ----------------- | --------------------------------------------------
 **Default style** | `Widget.MaterialComponents.Button.TextButton`
 **Icon style**    | `Widget.MaterialComponents.Button.TextButton.Icon`
@@ -229,7 +230,7 @@ An outlined button has a text label, a stroked container and an optional icon.
 
 #### Text label attributes
 
-&nbsp;         | Attribute                | Related method(s)                 | Default value
+Element        | Attribute                | Related method(s)                 | Default value
 -------------- | ------------------------ | --------------------------------- | -------------
 **Text label** | `android:text`           | `setText`<br/>`getText`           | `null`
 **Color**      | `android:textColor`      | `setTextColor`<br/>`getTextColor` | `?attr/colorPrimary` (see all [states](https://github.com/material-components/material-components-android/tree/master/lib/java/com/google/android/material/button/res/color/mtrl_text_btn_text_color_selector.xml))
@@ -237,7 +238,7 @@ An outlined button has a text label, a stroked container and an optional icon.
 
 #### Container attributes
 
-&nbsp;           | Attribute             | Related method(s)                                                            | Default value
+Element          | Attribute             | Related method(s)                                                            | Default value
 ---------------- | --------------------- | ---------------------------------------------------------------------------- | -------------
 **Color**        | `app:backgroundTint`  | `setBackgroundColor`<br/>`setBackgroundTintList`<br/>`getBackgroundTintList` | `@android:color/transparent` (see all [states](https://github.com/material-components/material-components-android/tree/master/lib/java/com/google/android/material/button/res/color/mtrl_btn_text_btn_bg_color_selector.xml))
 **Stroke color** | `app:strokeColor`     | `setStrokeColor`<br/>`setStrokeColorResource`<br/>`getStrokeColor`           | `?attr/colorOnSurface` at 12% opacity (see all [states](https://github.com/material-components/material-components-android/tree/master/lib/java/com/google/android/material/button/res/color/mtrl_btn_stroke_color_selector.xml))
@@ -248,7 +249,7 @@ An outlined button has a text label, a stroked container and an optional icon.
 
 #### Icon attributes
 
-&nbsp;                                          | Attribute         | Related method(s)                                         | Default value
+Element                                         | Attribute         | Related method(s)                                         | Default value
 ----------------------------------------------- | ----------------- | --------------------------------------------------------- | -------------
 **Icon**                                        | `app:icon`        | `setIcon`<br/>`setIconResource`<br/>`getIcon`             | `null`
 **Color**                                       | `app:iconTint`    | `setIconTint`<br/>`setIconTintResource`<br/>`getIconTint` | `?attr/colorPrimary` (see all [states](https://github.com/material-components/material-components-android/tree/master/lib/java/com/google/android/material/button/res/color/mtrl_text_btn_text_color_selector.xml))
@@ -258,7 +259,7 @@ An outlined button has a text label, a stroked container and an optional icon.
 
 #### Styles
 
-&nbsp;            | Style
+Element           | Style
 ----------------- | ------------------------------------------------------
 **Default style** | `Widget.MaterialComponents.Button.OutlinedButton`
 **Icon style**    | `Widget.MaterialComponents.Button.OutlinedButton.Icon`
@@ -344,7 +345,7 @@ A contained button has a text label, a filled container and an optional icon.
 
 #### Text label attributes
 
-&nbsp;         | Attribute                | Related method(s)                 | Default value
+Element        | Attribute                | Related method(s)                 | Default value
 -------------- | ------------------------ | --------------------------------- | -------------
 **Text label** | `android:text`           | `setText`<br/>`getText`           | `null`
 **Color**      | `android:textColor`      | `setTextColor`<br/>`getTextColor` | `?attr/colorOnPrimary` (see all [states](https://github.com/material-components/material-components-android/tree/master/lib/java/com/google/android/material/button/res/color/mtrl_btn_text_color_selector.xml))
@@ -352,7 +353,7 @@ A contained button has a text label, a filled container and an optional icon.
 
 #### Container attributes
 
-&nbsp;           | Attribute             | Related method(s)                                                            | Default value
+Element          | Attribute             | Related method(s)                                                            | Default value
 ---------------- | --------------------- | ---------------------------------------------------------------------------- | -------------
 **Color**        | `app:backgroundTint`  | `setBackgroundColor`<br/>`setBackgroundTintList`<br/>`getBackgroundTintList` | `?attr/colorPrimary` (see all [states](https://github.com/material-components/material-components-android/tree/master/lib/java/com/google/android/material/button/res/color/mtrl_btn_bg_color_selector.xml))
 **Stroke color** | `app:strokeColor`     | `setStrokeColor`<br/>`setStrokeColorResource`<br/>`getStrokeColor`           | `null`
@@ -363,7 +364,7 @@ A contained button has a text label, a filled container and an optional icon.
 
 #### Icon attributes
 
-&nbsp;                                          | Attribute         | Related method(s)                                         | Default value
+Element                                         | Attribute         | Related method(s)                                         | Default value
 ----------------------------------------------- | ----------------- | --------------------------------------------------------- | -------------
 **Icon**                                        | `app:icon`        | `setIcon`<br/>`setIconResource`<br/>`getIcon`             | `null`
 **Color**                                       | `app:iconTint`    | `setIconTint`<br/>`setIconTintResource`<br/>`getIconTint` | `?attr/colorOnPrimary` (see all [states](https://github.com/material-components/material-components-android/tree/master/lib/java/com/google/android/material/button/res/color/mtrl_btn_text_color_selector.xml))
@@ -373,7 +374,7 @@ A contained button has a text label, a filled container and an optional icon.
 
 #### Styles
 
-&nbsp;                    | Style
+Element                   | Style
 ------------------------- | -------------------------------------------------------
 **Default style**         | `Widget.MaterialComponents.Button`
 **Icon style**            | `Widget.MaterialComponents.Button.Icon`
@@ -514,14 +515,14 @@ A toggle button has a shared stroked container, icons and/or text labels.
 
 #### Selection attributes
 
-&nbsp;                 | Attribute               | Related method(s)                                | Default value
+Element                | Attribute               | Related method(s)                                | Default value
 ---------------------- | ----------------------- | ------------------------------------------------ | -------------
 **Single selection**   | `app:singleSelection`   | `setSingleSelection`<br/>`isSingleSelection`     | `false`
 **Selection required** | `app:selectionRequired` | `setSelectionRequired`<br/>`isSelectionRequired` | `false`
 
 #### Styles
 
-&nbsp;            | Style
+Element           | Style
 ----------------- | -----------------------------------------------------
 **Default style** | `Widget.MaterialComponents.MaterialButtonToggleGroup`
 

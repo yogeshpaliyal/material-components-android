@@ -19,7 +19,7 @@ Use radio buttons to:
 *   If available options can be collapsed, consider using a dropdown menu
     instead, as it uses less space.
 
-![Radio button hero example for menu options](assets/radiobutton/radiobutton_hero.png)
+![Settings menu with radio buttons for ringtones](assets/radiobutton/radiobutton_hero.png)
 
 **Contents**
 
@@ -133,7 +133,7 @@ radioButton.setOnCheckedChangeListener { buttonView, isChecked
 
 ### Radio button attributes
 
-&nbsp;                     | Attribute                                  | Related method(s)                                          | Default value
+Element                    | Attribute                                  | Related method(s)                                          | Default value
 -------------------------- | ------------------------------------------ | ---------------------------------------------------------- | -------------
 **To use material colors** | `app:useMaterialThemeColors`               | `setUseMaterialThemeColors`<br/>`isUseMaterialThemeColors` | `true` (ignored if `app:buttonTint` is set)
 **Color**                  | `app:buttonTint`                           | `setButtonTintList`<br/>`getButtonTintList`                | `null`
@@ -153,7 +153,7 @@ tinted, set `app:useMaterialThemeColors` to `false`:
 
 ### Text label attributes
 
-&nbsp;         | Attribute                | Related method(s)                  | Default value
+Element        | Attribute                | Related method(s)                  | Default value
 -------------- | ------------------------ | ---------------------------------- | -------------
 **Text label** | `android:text`           | `setText`<br/>`getText`            | `null`
 **Color**      | `android:textColor`      | `setTextColor`<br/>`getTextColors` | inherits from `AppCompatRadioButton`
@@ -170,7 +170,7 @@ unselected](assets/radiobutton/radiobutton_states.png)
 
 ### Styles
 
-&nbsp;            | Style
+Element           | Style
 ----------------- | ------------------------------------------------------
 **Default style** | `Widget.MaterialComponents.CompoundButton.RadioButton`
 
@@ -199,7 +199,9 @@ API and source code:
 
 The following example shows a radio button with Material Theming.
 
-!["Radio button theming with pink and brown colors"](assets/radiobutton/radiobutton_theming.png)
+!["5 radio buttons with brown text; first selected with pink outline and fill,
+last disabled with light brown text and
+button"](assets/radiobutton/radiobutton_theming.png)
 
 #### Implementing radio button theming
 
@@ -247,7 +249,7 @@ and in `color/button_tint.xml`:
 
 ```xml
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-  <item android:color=">@color/shrine_pink_900" android:state_checked="true"/>
+  <item android:color="@color/shrine_pink_900" android:state_checked="true"/>
   <item android:alpha="0.38" android:color="@color/shrine_pink_100" android:state_enabled="false"/>
   <item android:color="@color/shrine_pink_100"/>
 </selector>

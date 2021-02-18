@@ -18,7 +18,9 @@ Use checkboxes to:
 *   Present a list containing sub-selections
 *   Turn an item on or off in a desktop environment
 
-![Checkbox hero example for menu options](assets/checkbox/checkbox_hero.png)
+![Checkbox hero: "Meal options" header, "Additions" checkbox, "Pickles"
+"Lettuce" "Tomato" checkboxes with “Lettuce”
+checked](assets/checkbox/checkbox_hero.png)
 
 **Contents**
 
@@ -111,7 +113,7 @@ checkbox.setOnCheckedChangeListener { buttonView, isChecked
 
 ### Checkbox attributes
 
-&nbsp;                     | Attribute                                  | Related method(s)                                          | Default value
+Element                    | Attribute                                  | Related method(s)                                          | Default value
 -------------------------- | ------------------------------------------ | ---------------------------------------------------------- | -------------
 **To use material colors** | `app:useMaterialThemeColors`               | `setUseMaterialThemeColors`<br/>`isUseMaterialThemeColors` | `true` (ignored if `app:buttonTint` is set)
 **Color**                  | `app:buttonTint`                           | `setButtonTintList`<br/>`getButtonTintList`                | `null`
@@ -131,7 +133,7 @@ tinted, set `app:useMaterialThemeColors` to `false`:
 
 ### Text label attributes
 
-&nbsp;         | Attribute                | Related method(s)                  | Default value
+Element        | Attribute                | Related method(s)                  | Default value
 -------------- | ------------------------ | ---------------------------------- | -------------
 **Text label** | `android:text`           | `setText`<br/>`getText`            | `null`
 **Color**      | `android:textColor`      | `setTextColor`<br/>`getTextColors` | inherits from `AppCompatCheckBox`
@@ -151,7 +153,7 @@ selected and unselected states are supported._
 
 ### Styles
 
-&nbsp;            | Style
+Element           | Style
 ----------------- | ---------------------------------------------------
 **Default style** | `Widget.MaterialComponents.CompoundButton.CheckBox`
 
@@ -178,7 +180,8 @@ API and source code:
 
 The following example shows a checkbox with Material Theming.
 
-!["Checkbox theming with pink and brown colors"](assets/checkbox/checkbox_theming.png)
+!["5 checkboxes with brown text and box outlines, checkbox 1 is selected box
+with pink fill and white checkmark"](assets/checkbox/checkbox_theming.png)
 
 #### Implementing checkbox theming
 

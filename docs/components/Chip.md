@@ -11,7 +11,8 @@ path: /catalog/chips/
 [Chips](https://material.io/components/chips) are compact elements that
 represent an input, attribute, or action.
 
-![Hero image of an input chip](assets/chips/chips_hero.png)
+![Email with purple "Compose" header and grey chip with an email address on the
+"To" line](assets/chips/chips_hero.png)
 
 **Contents**
 
@@ -102,7 +103,8 @@ to a `ViewGroup` such as `RecyclerView`). A `ChipGroup` contains a set of
 
 A `ChipGroup` rearranges chips across multiple rows by default.
 
-!["A group of 6 chips."](assets/chips/chips_filter.png)
+!["6 grey "Filter" chips spread across 2 lines: "Filters" 1 and 3 selected and
+are darker grey and include checkmarks."](assets/chips/chips_filter.png)
 
 ```xml
 <com.google.android.material.chip.ChipGroup
@@ -119,7 +121,8 @@ A `ChipGroup` can also constrain its chips to a single row using the
 `app:singleLine` attribute. Using a single row may necessitate wrapping the
 `ChipGroup` with a `HorizontalScrollView`.
 
-!["Chips in a single line."](assets/chips/chips_singleline.png)
+!["Single line of grey chips: chips 1, 2, and 3 are fully visible, chip 4 is
+partly visible"](assets/chips/chips_singleline.png)
 
 ```xml
 <HorizontalScrollView
@@ -147,7 +150,7 @@ for lower amounts._
 The following image shows a group of chips with
 `app:chipSpacingHorizontal="42dp"`.
 
-!["A group of chips with horizontal spacing."](assets/chips/chips_spacing.png)
+!["6 grey chips in 2 rows with 42dp horizontal spacing"](assets/chips/chips_spacing.png)
 
 #### Multiple exclusion scope
 
@@ -204,7 +207,7 @@ For example, consider an editable e-mail address field that converts addresses
 to chips as they are typed and validated. We can combine `ChipDrawable` with
 spans to add a chip to an `EditText`:
 
-!["A standalone chip insite a text field."](assets/chips/chips_standalone.png)
+!["Standalone chip inside a text field"](assets/chips/chips_standalone.png)
 
 ```kt
 chip.setBounds(0, 0, chip.intrinsicWidth, chip.intrinsicHeight)
@@ -213,7 +216,7 @@ val text = editText.text!!
 text.setSpan(span, 0, text.length, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
 ```
 
-## Types
+### Types
 
 There are four types of chips: 1\. [input (entry)](#input-chip), 2\.
 [choice](#choice-chip), 3\. [filter](#filter-chip), 4\. [action](#action-chip)
@@ -232,14 +235,14 @@ API and source code:
     *   [Class definition](https://developer.android.com/reference/com/google/android/material/chip/ChipDrawable)
     *   [Class source](https://github.com/material-components/material-components-android/tree/master/lib/java/com/google/android/material/chip/ChipDrawable.java)
 
-### Input chip
+## Input chip
 
 Input chips (refered to as **entry** chips in Android) represent a complex piece
 of information in compact form, such as an entity (person, place, or thing) or
 text. They enable user input and verify that input by converting text into
 chips.
 
-#### Input chip example
+### Input chip example
 
 The following example shows three input chips.
 
@@ -270,14 +273,14 @@ In the layout:
 </com.google.android.material.chip.ChipGroup>
 ```
 
-### Choice chip
+## Choice chip
 
 Choice chips allow selection of a single chip from a set of options.
 
 Choice chips clearly delineate and display options in a compact area. They are a
 good alternative to toggle buttons, radio buttons, and single select menus.
 
-#### Caveats
+### Caveats
 
 If you add choice chips to a dialog (which has 24dp elevation), disable the
 chips' elevation overlays to ensure that there is sufficient color contrast when
@@ -298,11 +301,12 @@ the chips are checked.
 </style>
 ```
 
-#### Choice chip example
+### Choice chip example
 
 The following example shows four choice chips.
 
-!["Choice chips with texts Choice 1 to 4 and the first one selected."](assets/chips/chips_choice.png)
+!["4 choice chips, Choice 1 is selected with purple fill, Choices 2-4 unselected
+with grey fill"](assets/chips/chips_choice.png)
 
 In the layout:
 
@@ -335,18 +339,19 @@ In the layout:
 </com.google.android.material.chip.ChipGroup>
 ```
 
-### Filter chip
+## Filter chip
 
 Filter chips use tags or descriptive words to filter content.
 
 Filter chips clearly delineate and display options in a compact area. They are a
 good alternative to toggle buttons or checkboxes.
 
-#### Filter chip example
+### Filter chip example
 
 The following example shows six filter chips.
 
-!["Filter chips with texts Filter 1 to 6, the first and third selected."](assets/chips/chips_filter.png)
+!["6 grey "Filter" chips spread across 2 lines: "Filters" 1 and 3 selected and
+are darker grey and include checkmarks."](assets/chips/chips_filter.png)
 
 In the layout:
 
@@ -390,7 +395,7 @@ In the layout:
 </com.google.android.material.chip.ChipGroup>
 ```
 
-### Action chip
+## Action chip
 
 Action chips offer actions related to primary content. They should appear
 dynamically and contextually in a UI.
@@ -398,7 +403,7 @@ dynamically and contextually in a UI.
 An alternative to action chips are buttons, which should appear persistently and
 consistently.
 
-#### Action chip example
+### Action chip example
 
 The following example shows four action chips.
 
@@ -451,7 +456,7 @@ The following is an anatomy diagram of a chip:
 
 #### Container attributes
 
-&nbsp;               | Attribute                                                       | Related method(s)                                                                                          | Default value
+Element              | Attribute                                                       | Related method(s)                                                                                          | Default value
 -------------------- | --------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | -------------
 **Color**            | `app:chipBackgroundColor`                                       | `setChipBackgroundColor`<br/>`setChipBackgroundColorResource`<br/>`getChipBackgroundColor`                 | `?attr/colorOnSurface` at 10%
 **Ripple color**     | `app:rippleColor`                                               | `setRippleColor`<br/>`setRippleColorResource`<br/>`getRippleColor`                                         | `?attr/colorOnSurface` at 12%
@@ -467,7 +472,7 @@ The following is an anatomy diagram of a chip:
 
 **Chip icon**
 
-&nbsp;         | Attribute                                       | Related method(s)                                                     | Default value
+Element        | Attribute                                       | Related method(s)                                                     | Default value
 -------------- | ----------------------------------------------- | --------------------------------------------------------------------- | -------------
 **Icon**       | `app:chipIcon`                                  | `setChipIconVisible`<br/>`isChipIconVisible`                          | `null`
 **Visibility** | `app:chipIconVisible`                           | `setChipIcon`<br/>`setChipIconResource`<br/>`getChipIcon`             | `true` (action and entry)
@@ -479,7 +484,7 @@ The following is an anatomy diagram of a chip:
 
 If visible, the checked icon overlays the chip icon.
 
-&nbsp;         | Attribute                | Related method(s)                                                              | Default value
+Element        | Attribute                | Related method(s)                                                              | Default value
 -------------- | ------------------------ | ------------------------------------------------------------------------------ | -------------
 **Icon**       | `app:checkedIcon`        | `setCheckedIconVisible`<br/>`isCheckedIconVisible`                             | `@drawable/ic_mtrl_chip_checked_circle`
 **Visibility** | `app:checkedIconVisible` | `setCheckedIcon`<br/>`setCheckedIconResource`<br/>`getCheckedIcon`             | `true` (entry, filter, choice)
@@ -487,7 +492,7 @@ If visible, the checked icon overlays the chip icon.
 
 #### Text attributes
 
-&nbsp;         | Attribute                                       | Related method(s)                                                           | Default value
+Element        | Attribute                                       | Related method(s)                                                           | Default value
 -------------- | ----------------------------------------------- | --------------------------------------------------------------------------- | -------------
 **Text label** | `android:text`                                  | `setChipText`<br/>`setChipTextResource`<br/>`getChipText`                   | `null`
 **Color**      | `android:textColor`                             | `setTextColor`<br/>`getTextColors`                                          | `?attr/colorOnSurface` at 87%
@@ -496,7 +501,7 @@ If visible, the checked icon overlays the chip icon.
 
 #### Remove (close) icon attributes
 
-&nbsp;                  | Attribute                                                 | Related method(s)                                                                    | Default value
+Element                 | Attribute                                                 | Related method(s)                                                                    | Default value
 ----------------------- | --------------------------------------------------------- | ------------------------------------------------------------------------------------ | -------------
 **Icon**                | `app:closeIcon`                                           | `setCloseIcon`<br/>`setCloseIconResource`<br/>`getCloseIcon`                         | `@drawable/ic_mtrl_chip_close_circle`
 **Visibility**          | `app:closeIconVisible`                                    | `setCloseIconVisible`<br/>`isCloseIconVisible`                                       | `true` for entry
@@ -507,7 +512,7 @@ If visible, the checked icon overlays the chip icon.
 
 #### `ChipGroup` attributes
 
-&nbsp;        | Attribute                                                                   | Related method(s)                                             | Default value
+Element       | Attribute                                                                   | Related method(s)                                             | Default value
 ------------- | --------------------------------------------------------------------------- | ------------------------------------------------------------- | -------------
 **Layout**    | `app:singleLine`                                                            | `setSingleLine`<br/>`isSingleLine`                            | `false`
 **Selection** | `app:singleSelection`<br/>`app:selectionRequired`                           | `setSingleSelection*`<br/>`isSingleSelection*`                | `false`<br/>`false`
@@ -515,7 +520,7 @@ If visible, the checked icon overlays the chip icon.
 
 #### Styles
 
-&nbsp;                          | Style
+Element                         | Style
 ------------------------------- | ---------------------------------------
 **Default style (action chip)** | `Widget.MaterialComponents.Chip.Action`
 **Input (entry) chip**          | `Widget.MaterialComponents.Chip.Entry`
@@ -525,7 +530,7 @@ If visible, the checked icon overlays the chip icon.
 
 #### Theme attributes
 
-&nbsp;             | Theme attribute             | Default style
+Element            | Theme attribute             | Default style
 ------------------ | --------------------------- | -------------
 **`Chip`**         | `?attr/chipStyle`           | `Widget.MaterialComponents.Chip.Action`
 **`ChipGroup`**    | `?attr/chipGroupStyle`      | `Widget.MaterialComponents.ChipGroup`
@@ -557,7 +562,7 @@ API and source code:
 
 The following example shows chips with Material Theming.
 
-!["Chip theming example with pink and brown colors."](assets/chips/chips_theming.png)
+!["3 chips with brown text and icons, white fill, and pink outlines"](assets/chips/chips_theming.png)
 
 #### Implementing chip theming
 

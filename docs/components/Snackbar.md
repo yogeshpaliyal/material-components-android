@@ -12,7 +12,9 @@ path: /catalog/snackbars/
 [Snackbars](https://material.io/components/snackbars) provide brief messages
 about app processes at the bottom of the screen.
 
-![Snackbars hero image](assets/snackbar/snackbar_hero.png)
+![Photo grid: each photo has heart toggle button, 2 selected. Snackbar has
+upload error message and 'retry' text
+button.](assets/snackbar/snackbar_hero.png)
 
 **Contents**
 
@@ -163,7 +165,7 @@ The following is an anatomy diagram of a snackbar:
 
 ### Text label attributes
 
-&nbsp;               | Attribute                | Related method(s) | Default value
+Element              | Attribute                | Related method(s) | Default value
 -------------------- | ------------------------ | ----------------- | -------------
 **Text label style** | N/A                      | N/A               | `?attr/snackbarTextViewStyle`
 **Text label**       | `android:text`           | `setText`         | `null`
@@ -172,7 +174,7 @@ The following is an anatomy diagram of a snackbar:
 
 ### Container attributes
 
-&nbsp;                  | Attribute                         | Related method(s)                               | Default value
+Element                 | Attribute                         | Related method(s)                               | Default value
 ----------------------- | --------------------------------- | ----------------------------------------------- | -------------
 **Color**               | `app:backgroundTint`              | `setBackgroundTint`<br/>`setBackgroundTintList` | `?attr/colorSurface` at 80% over `?attr/colorOnSurface`
 **Color overlay alpha** | `app:backgroundOverlayColorAlpha` | N/A                                             | `0.8f` (ignored if `app:backgroundTint` is set)
@@ -182,7 +184,7 @@ The following is an anatomy diagram of a snackbar:
 
 ### Action attributes
 
-&nbsp;               | Attribute                  | Related method(s)    | Default value
+Element              | Attribute                  | Related method(s)    | Default value
 -------------------- | -------------------------- | -------------------- | -------------
 **Button style**     | N/A                        | N/A                  | `?attr/snackbarButtonStyle`
 **Text color alpha** | `app:actionTextColorAlpha` | N/A                  | `0.5f`
@@ -190,7 +192,7 @@ The following is an anatomy diagram of a snackbar:
 
 ### Styles
 
-&nbsp;                  | **Theme attribute**           | **Default value**
+Element                 | **Theme attribute**           | **Default value**
 ----------------------- | ----------------------------- | -----------------
 **Default style**       | `?attr/snackbarStyle`         | `@style/Widget.MaterialComponents.Snackbar`
 **Action button style** | `?attr/snackbarButtonStyle`   | `@style/Widget.MaterialComponents.Button.TextButton.Snackbar`
@@ -219,7 +221,8 @@ The following is an example of a snackbar with an action button that uses the
 Material.io [Shrine](https://material.io/design/material-studies/shrine.html)
 color theming:
 
-!["Snackbar theming with pink and brown colors"](assets/snackbar/snackbar_theming.png)
+!["Snackbar with brown container, pink text, and pink 'Action' text button on
+light grey screen"](assets/snackbar/snackbar_theming.png)
 
 #### Implementing snackbar theming
 

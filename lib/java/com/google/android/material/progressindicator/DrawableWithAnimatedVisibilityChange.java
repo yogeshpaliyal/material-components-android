@@ -187,16 +187,16 @@ abstract class DrawableWithAnimatedVisibilityChange extends Drawable implements 
 
   // ******************* Visibility control *******************
 
-  /** The drawable will start with show animator as default. */
+  /** The drawable will start the main animation without show animator. */
   @Override
   public void start() {
-    setVisible(true, true);
+    setVisibleInternal(true, true, false);
   }
 
-  /** The drawable will stop with hide animator as default. */
+  /** The drawable will stop the main animation without hide animator. */
   @Override
   public void stop() {
-    setVisible(false, true);
+    setVisibleInternal(false, true, false);
   }
 
   @Override
@@ -260,6 +260,8 @@ abstract class DrawableWithAnimatedVisibilityChange extends Drawable implements 
 
     if (!animate) {
       if (animatorInAction.isRunning()) {
+        animatorInAction.end();
+      } else {
         // Show/hide animation should fast-forward to the end without callbacks.
         endAnimatorWithoutCallbacks(animatorInAction);
       }
@@ -280,12 +282,6 @@ abstract class DrawableWithAnimatedVisibilityChange extends Drawable implements 
     if (!specAnimationEnabled) {
       // If no animation enabled in spec, end the animator without callbacks.
       endAnimatorWithoutCallbacks(animatorInAction);
-      return changed;
-    }
-    if (!animate) {
-      // This triggers onAnimationStart() callbacks for showing and onAnimationEnd() callbacks for
-      // hiding. It also fast-forwards the animator properties to the end state.
-      animatorInAction.end();
       return changed;
     }
 

@@ -93,16 +93,16 @@ Or, you can set a custom size via the `app:fabCustomSize` attribute. If set,
 `app:fabSize` will be ignored, unless the custom size is cleared via the
 `clearCustomSize` method.
 
-## Types
+### Types
 
 There are three types of FABS: 1\. [Regular FABs](#regular-fabs), 2\.
 [Mini FABs](#mini-fabs), 3\. [Extended FABs](#extended-fabs)
 
 ![FAB types](assets/fabs/FAB_types.png)
 
-## FABs
+## Regular FABs
 
-Floating action buttons come in a default and mini size.
+Regular FABs are FABs that are not expanded and are a regular size.
 
 API and source code:
 
@@ -110,11 +110,7 @@ API and source code:
     *   [Class description](https://developer.android.com/reference/com/google/android/material/floatingactionbutton/FloatingActionButton)
     *   [Class source](https://github.com/material-components/material-components-android/tree/master/lib/java/com/google/android/material/floatingactionbutton/FloatingActionButton.java)
 
-### Regular FABs
-
-Regular FABs are FABs that are not expanded and are a regular size.
-
-#### Regular FAB example
+### Regular FAB example
 
 The following example shows a regular FAB with a plus icon.
 
@@ -159,12 +155,18 @@ A regular FAB has a container and an icon.
 1.  Container
 1.  Icon
 
-### Mini FABs
+## Mini FABs
 
 A mini FAB should be used on smaller screens.
 
 Mini FABs can also be used to create visual continuity with other screen
 elements.
+
+API and source code:
+
+*   `FloatingActionButton`
+    *   [Class description](https://developer.android.com/reference/com/google/android/material/floatingactionbutton/FloatingActionButton)
+    *   [Class source](https://github.com/material-components/material-components-android/tree/master/lib/java/com/google/android/material/floatingactionbutton/FloatingActionButton.java)
 
 ### Mini FAB example
 
@@ -209,7 +211,7 @@ A mini FAB has a container and an icon.
 
 #### Container attributes
 
-&nbsp;                        | Attribute                                      | Related method(s)                                                                     | Default value
+Element                       | Attribute                                      | Related method(s)                                                                     | Default value
 ----------------------------- | ---------------------------------------------- | ------------------------------------------------------------------------------------- | -------------
 **Color**                     | `app:backgroundTint`                           | `setBackgroundTintList`<br/>`getBackgroundTintList`                                   | `?attr/colorSecondary` (see all [states](https://github.com/material-components/material-components-android/tree/master/lib/java/com/google/android/material/floatingactionbutton/res/color/mtrl_fab_bg_color_selector.xml))
 **Stroke**                    | `app:borderWidth`                              | N/A                                                                                   | `0.5dp`
@@ -223,14 +225,14 @@ A mini FAB has a container and an icon.
 
 #### Icon attributes
 
-&nbsp;    | Attribute       | Related method(s)                                           | Default value
+Element   | Attribute       | Related method(s)                                           | Default value
 --------- | --------------- | ----------------------------------------------------------- | -------------
 **Icon**  | `app:srcCompat` | `setImageDrawable`<br/>`setImageResource`<br/>`getDrawable` | `null`
 **Color** | `app:tint`      | `setImageTintList`<br/>`getImageTintList`                   | `?attr/colorOnSecondary` (see all [states](https://github.com/material-components/material-components-android/tree/master/lib/java/com/google/android/material/floatingactionbutton/res/color/mtrl_fab_icon_text_color_selector.xml))
 
 #### Styles
 
-&nbsp;            | Style
+Element           | Style
 ----------------- | ------------------------------------------------
 **Default style** | `Widget.MaterialComponents.FloatingActionButton`
 
@@ -307,7 +309,7 @@ An extended FAB has a text label, a transparent container and an optional icon.
 
 #### Container attributes
 
-&nbsp;                        | Attribute                                                                                  | Related method(s)                                                  | Default value
+Element                       | Attribute                                                                                  | Related method(s)                                                  | Default value
 ----------------------------- | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------ | -------------
 **Color**                     | `app:backgroundTint`                                                                       | `setBackgroundTintList`<br/>`getBackgroundTintList`                | `?attr/colorSecondary` (see all [states](https://github.com/material-components/material-components-android/tree/master/lib/java/com/google/android/material/floatingactionbutton/res/color/mtrl_fab_bg_color_selector.xml))
 **Stroke color**              | `app:strokeColor`                                                                          | `setStrokeColor`<br/>`getStrokeColor`                              | `null`
@@ -322,16 +324,16 @@ An extended FAB has a text label, a transparent container and an optional icon.
 
 #### Icon attributes
 
-&nbsp;                            | Attribute         | Related method(s)                                         | Default value
+Element                           | Attribute         | Related method(s)                                         | Default value
 --------------------------------- | ----------------- | --------------------------------------------------------- | -------------
-**Icon**                          | `app:icon`        | `setIcon`<br/>`setIconResource`<br/>`getIcon`             | `?attr/colorOnSecondary`
+**Icon**                          | `app:icon`        | `setIcon`<br/>`setIconResource`<br/>`getIcon`             | `null`
 **Color**                         | `app:iconTint`    | `setIconTint`<br/>`setIconTintResource`<br/>`getIconTint` | `?attr/colorOnSecondary` (see all [states](https://github.com/material-components/material-components-android/tree/master/lib/java/com/google/android/material/floatingactionbutton/res/color/mtrl_fab_icon_text_color_selector.xml))
 **Size**                          | `app:iconSize`    | `setIconSize`<br/>`getIconSize`                           | `24dp`
 **Padding between icon and text** | `app:iconPadding` | `setIconPadding`<br/>`getIconPadding`                     | `16dp`
 
 #### Text label
 
-&nbsp;         | Attribute                | Related method(s)                 | Default value
+Element        | Attribute                | Related method(s)                 | Default value
 -------------- | ------------------------ | --------------------------------- | -------------
 **Text label** | `android:text`           | `setText`<br/>`getText`           | `null`
 **Color**      | `android:textColor`      | `setTextColor`<br/>`getTextColor` | `?attr/colorOnSecondary` (see all [states](https://github.com/material-components/material-components-android/tree/master/lib/java/com/google/android/material/floatingactionbutton/res/color/mtrl_fab_icon_text_color_selector.xml))
@@ -339,7 +341,7 @@ An extended FAB has a text label, a transparent container and an optional icon.
 
 #### Styles
 
-&nbsp;                                    | Style
+Element                                   | Style
 ----------------------------------------- | -----
 **Default style**                         | `Widget.MaterialComponents.ExtendedFloatingActionButton.Icon`
 **Text-only when**<br/>**extended style** | `Widget.MaterialComponents.ExtendedFloatingActionButton`

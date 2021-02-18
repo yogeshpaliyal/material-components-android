@@ -47,6 +47,10 @@ abstract class IndeterminateAnimatorDelegate<T extends Animator> {
     this.drawable = drawable;
   }
 
+  protected float getFractionInRange(int playtime, int start, int duration) {
+    return (float) (playtime - start) / duration;
+  }
+
   /** Starts the animator. */
   abstract void startAnimator();
 
@@ -55,18 +59,6 @@ abstract class IndeterminateAnimatorDelegate<T extends Animator> {
 
   /** Requests to cancel the main animator after the current cycle finishes. */
   abstract void requestCancelAnimatorAfterCurrentCycle();
-
-  /**
-   * Resets all properties controlled by the animator for a fresh start. This should be called after
-   * the drawable is hidden or before the drawable becomes visible.
-   */
-  abstract void resetPropertiesForNewStart();
-
-  /**
-   * Resets all properties controlled by the animator for the next animation cycle. This should be
-   * called between the animation cycles.
-   */
-  abstract void resetPropertiesForNextCycle();
 
   /**
    * Invalidates the spec values used by the animator delegate. When the spec values are changed in

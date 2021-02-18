@@ -38,6 +38,7 @@ import androidx.core.view.accessibility.AccessibilityNodeInfoCompat.CollectionIn
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat.CollectionItemInfoCompat;
 import androidx.appcompat.content.res.AppCompatResources;
 import android.util.AttributeSet;
+import android.util.DisplayMetrics;
 import android.util.SparseArray;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -50,6 +51,7 @@ import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
 import com.google.android.material.resources.MaterialResources;
 import com.google.android.material.timepicker.ClockHandView.OnRotateListener;
+import java.util.Arrays;
 
 /**
  * A View to display a clock face.
@@ -60,6 +62,8 @@ import com.google.android.material.timepicker.ClockHandView.OnRotateListener;
 class ClockFaceView extends RadialViewGroup implements OnRotateListener {
 
   private static final float EPSILON = .001f;
+  private static final int INITIAL_CAPACITY = 12;
+  private static final String VALUE_PLACEHOLDER = "";
 
   private final ClockHandView clockHandView;
   private final Rect textViewRect = new Rect();
@@ -71,6 +75,9 @@ class ClockFaceView extends RadialViewGroup implements OnRotateListener {
   private final int[] gradientColors;
   private final float[] gradientPositions = new float[] {0f, 0.9f, 1f};
   private final int clockHandPadding;
+  private final int minimumHeight;
+  private final int minimumWidth;
+  private final int clockSize;
 
   private String[] values;
 
@@ -159,6 +166,15 @@ class ClockFaceView extends RadialViewGroup implements OnRotateListener {
                     /* selected= */ host.isSelected()));
           }
         };
+
+    // Fill clock face with place holders
+    String[] initialValues = new String[INITIAL_CAPACITY];
+    Arrays.fill(initialValues, VALUE_PLACEHOLDER);
+    setValues(initialValues, /* contentDescription= */ 0);
+
+    minimumHeight = res.getDimensionPixelSize(R.dimen.material_time_picker_minimum_screen_height);
+    minimumWidth = res.getDimensionPixelSize(R.dimen.material_time_picker_minimum_screen_width);
+    clockSize = res.getDimensionPixelSize(R.dimen.material_clock_size);
   }
 
   /**
@@ -172,7 +188,8 @@ class ClockFaceView extends RadialViewGroup implements OnRotateListener {
 
   private void updateTextViews(@StringRes int contentDescription) {
     LayoutInflater inflater = LayoutInflater.from(getContext());
-    for (int i = 0; i < max(values.length, textViewPool.size()); ++i) {
+    int size = textViewPool.size();
+    for (int i = 0; i < max(values.length, size); ++i) {
       TextView textView = textViewPool.get(i);
       if (i >= values.length) {
         removeView(textView);
@@ -182,17 +199,20 @@ class ClockFaceView extends RadialViewGroup implements OnRotateListener {
 
       if (textView == null) {
         textView = (TextView) inflater.inflate(R.layout.material_clockface_textview, this, false);
-        addView(textView);
         textViewPool.put(i, textView);
+        addView(textView);
       }
 
+      textView.setVisibility(VISIBLE);
       textView.setText(values[i]);
       textView.setTag(R.id.material_value_index, i);
       ViewCompat.setAccessibilityDelegate(textView, valueAccessibilityDelegate);
 
       textView.setTextColor(textColor);
-      Resources res = getResources();
-      textView.setContentDescription(res.getString(contentDescription, values[i]));
+      if (contentDescription != 0) {
+        Resources res = getResources();
+        textView.setContentDescription(res.getString(contentDescription, values[i]));
+      }
     }
   }
 
@@ -231,6 +251,9 @@ class ClockFaceView extends RadialViewGroup implements OnRotateListener {
     RectF selectorBox = clockHandView.getCurrentSelectorBox();
     for (int i = 0; i < textViewPool.size(); ++i) {
       TextView tv = textViewPool.get(i);
+      if (tv == null) {
+        continue;
+      }
       tv.getDrawingRect(textViewRect);
       textViewRect.offset(tv.getPaddingLeft(), tv.getPaddingTop());
       offsetDescendantRectToMyCoords(tv, textViewRect);
@@ -262,5 +285,26 @@ class ClockFaceView extends RadialViewGroup implements OnRotateListener {
       currentHandRotation = rotation;
       findIntersectingTextView();
     }
+  }
+
+  @Override
+  protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+    Resources r = getResources();
+    DisplayMetrics displayMetrics = r.getDisplayMetrics();
+
+    float height = displayMetrics.heightPixels;
+    float width = displayMetrics.widthPixels;
+
+    // If the screen is smaller than our defined values. Scale the clock face
+    // proportionally to the smaller size
+    int size = (int) (clockSize / max3(minimumHeight / height, minimumWidth / width, 1f));
+
+    int spec = MeasureSpec.makeMeasureSpec(size, MeasureSpec.EXACTLY);
+    setMeasuredDimension(size, size);
+    super.onMeasure(spec, spec);
+  }
+
+  private static float max3(float a, float b, float c) {
+    return max(max(a, b), c);
   }
 }

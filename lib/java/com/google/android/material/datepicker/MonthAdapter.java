@@ -27,6 +27,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import java.util.Calendar;
 import java.util.Collection;
+import java.util.Locale;
 
 /**
  * Represents the days of a month with {@link TextView} instances for each day.
@@ -116,7 +117,8 @@ class MonthAdapter extends BaseAdapter {
       int dayNumber = offsetPosition + 1;
       // The tag and text uniquely identify the view within the MaterialCalendar for testing
       day.setTag(month);
-      day.setText(String.valueOf(dayNumber));
+      Locale locale = day.getResources().getConfiguration().locale;
+      day.setText(String.format(locale, "%d", dayNumber));
       long dayInMillis = month.getDay(dayNumber);
       if (month.year == Month.current().year) {
         day.setContentDescription(DateStrings.getMonthDayOfWeekDay(dayInMillis));
@@ -131,7 +133,8 @@ class MonthAdapter extends BaseAdapter {
     if (date == null) {
       return day;
     }
-    return updateSelectedState(day, date);
+    updateSelectedState(day, date);
+    return day;
   }
 
   public void updateSelectedStates(MaterialCalendarGridView monthGrid) {
@@ -155,32 +158,41 @@ class MonthAdapter extends BaseAdapter {
       // Validate that the day is in the right month.
       int day = month.getDayOfMonth(date);
       updateSelectedState(
-          (TextView) monthGrid.getChildAt(monthGrid.getAdapter().dayToPosition(day)), date);
+          (TextView)
+              monthGrid.getChildAt(
+                  monthGrid.getAdapter().dayToPosition(day) - monthGrid.getFirstVisiblePosition()),
+          date);
     }
   }
 
-  private TextView updateSelectedState(TextView day, long date) {
+  private void updateSelectedState(@Nullable TextView day, long date) {
+    if (day == null) {
+      return;
+    }
+    final CalendarItemStyle style;
     if (calendarConstraints.getDateValidator().isValid(date)) {
       day.setEnabled(true);
-      for (long selectedDay : dateSelector.getSelectedDays()) {
-        if (UtcDates.canonicalYearMonthDay(date) == UtcDates.canonicalYearMonthDay(selectedDay)) {
-          calendarStyle.selectedDay.styleItem(day);
-          return day;
-        }
-      }
-
-      if (UtcDates.getTodayCalendar().getTimeInMillis() == date) {
-        calendarStyle.todayDay.styleItem(day);
-        return day;
+      if (isSelected(date)) {
+        style = calendarStyle.selectedDay;
+      } else if (UtcDates.getTodayCalendar().getTimeInMillis() == date) {
+        style = calendarStyle.todayDay;
       } else {
-        calendarStyle.day.styleItem(day);
-        return day;
+        style = calendarStyle.day;
       }
     } else {
       day.setEnabled(false);
-      calendarStyle.invalidDay.styleItem(day);
-      return day;
+      style = calendarStyle.invalidDay;
     }
+    style.styleItem(day);
+  }
+
+  private boolean isSelected(long date) {
+    for (long selectedDay : dateSelector.getSelectedDays()) {
+      if (UtcDates.canonicalYearMonthDay(date) == UtcDates.canonicalYearMonthDay(selectedDay)) {
+        return true;
+      }
+    }
+    return false;
   }
 
   private void initializeStyles(Context context) {
